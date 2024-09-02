@@ -28,12 +28,12 @@ controls.update()
 
 //SETUP SCENE
 const scene = new THREE.Scene()
-const floorTexture = new THREE.TextureLoader().load('/public/ground/Texturelabs_Concrete_146L.jpg')
+const floorTexture = new THREE.TextureLoader().load('ground/Texturelabs_Concrete_146L.jpg')
 floorTexture.repeat = new THREE.Vector2(20, 20)
 floorTexture.wrapS = THREE.ReplaceWrapping
 floorTexture.wrapT = THREE.ReplaceWrapping
 
-new RGBELoader().load('/enviorment/rosendal_park_sunset_puresky_4k.hdr', (enviormentMap) => {
+new RGBELoader().load('enviorment/rosendal_park_sunset_puresky_4k.hdr', (enviormentMap) => {
     enviormentMap.mapping = THREE.EquirectangularReflectionMapping
     scene.background = enviormentMap
     scene.environment = enviormentMap
@@ -65,7 +65,7 @@ plane.receiveShadow = true
 //scene.add(plane)
 
 const loader = new GLTFLoader()
-loader.load('/public/porsche-1975/scene.gltf', function (gltf){
+loader.load('porsche-1975/scene.gltf', function (gltf){
     scene.add(gltf.scene)
 }, undefined, function(error) {
         console.error(error)
